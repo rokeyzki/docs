@@ -1,0 +1,149 @@
+---
+title: Publish a Product to Etsy
+description: "Add a production partner, fill in the Etsy settings, and push your product live as a real listing"
+icon: "upload"
+---
+
+Publishing is the last step of building a product. If you have not built one yet, start with [Products](/docs/products/products) and [Personalizer](/docs/products/personalizer), then come back here.
+
+## First, Add a Production Partner
+
+Etsy requires every print-on-demand seller to declare who physically makes their items. Without one, Etsy refuses to create the listing, and the error it returns is `Oh dear, you cannot sell this item on Etsy`, which sounds like your shop is banned. It is not. It only means the production partner is missing.
+
+Etsy's API has no way to add a production partner, so this is something you do once, by hand, in your Etsy account.
+
+<Steps>
+  <Step title="Open the production partner settings">
+    In Etsy Shop Manager, go to **Settings** then **Partners you work with**, and click to add a partner.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-settings-nav.png | 内容: Etsy Shop Manager 左侧 Settings 展开，Partners you work with 高亮 */}
+  </Step>
+  <Step title="Name the company that prints your items">
+    Enter the company that actually prints and ships your products. If you fulfill through Printful, that is Printful. If you fulfill through Printify, that is Printify. Set **Location** to where that company produces your items.
+
+    <Warning>
+      Name the printer, not your design software. Etsy defines a production partner as the outside company that physically makes the item. Naming a tool instead of the printer counts as an inaccurate disclosure, and the risk falls on your shop.
+    </Warning>
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-add-form-top.png | 内容: Etsy "Add a production partner" 弹窗上半部分，含 Production partner 名称、Show this to buyers 开关、Location */}
+  </Step>
+  <Step title="Describe what they do for you">
+    This description is shown to buyers, so keep it clear and honest. Say that they print your designs and ship the orders. Something like:
+
+    > I create all the designs myself. This partner prints them onto the finished products, packs and ships each order directly to my customers.
+
+    Avoid vague lines like "they help with my shop". Etsy wants buyers to understand the arrangement.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-what-they-do.png | 内容: Etsy 添加生产合作方弹窗里 "What they do for you" 那一段，含描述输入框 */}
+  </Step>
+  <Step title="Answer the two remaining questions">
+    Under **More about your partner**, most print-on-demand sellers pick *I don't have the technical ability or equipment to make it entirely by myself* and *I design everything myself*. These answers go to Etsy only and are not shown to buyers. Save when you are done.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-more-about.png | 内容: "More about your partner" 两个下拉框已选好的状态 */}
+  </Step>
+</Steps>
+
+<Tip>You only do this once per shop. After it is saved, it appears in Mockspark's publish form for every product.</Tip>
+
+## Fill In the Etsy Settings
+
+Back in Mockspark, open your product and go to the publish step.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/publish-form-full.png | 内容: 发布页 Etsy 分支完整截图，从 Store 一直到 Buyer personalization */}
+
+### Shop and Platforms
+
+**Store** is the Etsy shop this product will be published to. You can switch shops while the product is still a draft. Once it has been published, the shop is locked.
+
+**Sales platform** and **Fulfillment platform** are shown for reference. They come from how the product was created.
+
+### Production Partner
+
+Pick the partner you added earlier. This field is required, because Etsy rejects the listing without it.
+
+If the dropdown is empty, the partner has not saved on Etsy's side yet. Add it, then reload this page.
+
+### Store Currency and Weight Unit
+
+**Store currency** should match the currency your Etsy shop sells in. Prices you set on the variants are read in this currency, so getting it wrong produces prices that are off by a lot.
+
+**Weight unit** only matters if your print provider needs shipping weights. Leave it as **No weight** if you are not sure.
+
+### Etsy Category
+
+Mockspark preselects a category based on the product type, so most of the time you can leave it alone. Change it if the guess is off, since the category affects where buyers find your listing on Etsy.
+
+### Etsy Shipping Profile
+
+Etsy handles shipping costs through shipping profiles that live in your shop.
+
+If you already have profiles, pick the one you want and Mockspark will attach it to the listing.
+
+If your shop has none yet, Mockspark offers to create one for you, shown as **Mockspark Shipping (free shipping)**.
+
+<Warning>
+Free shipping means the buyer pays nothing for delivery. It does not mean delivery is free. Your print provider still charges you for shipping, and that cost comes out of your margin. Price your items with that in mind, or set up your own shipping profile in Etsy instead.
+</Warning>
+
+The profile is created with your shop's own ship-from country, taken from your Etsy settings. For countries that use postal codes, Etsy requires one and does not share it through the API, so Mockspark asks you for it once.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/shipping-profile-sentinel.png | 内容: 店铺没有运费档案时，下拉里出现 "Mockspark Shipping (free shipping)" 选项，下方是解释文案与邮编输入框 */}
+
+### Etsy Return Policy
+
+Optional. Pick one of your shop's return policies if you have them.
+
+Mockspark does not create return policies for you, because a return policy is a promise you make to buyers and that should be your wording, not ours. You can add one in your [Etsy shop policy settings](https://www.etsy.com/your/shops/me/policy-settings) and reload the page.
+
+### Processing Time
+
+You will notice there is no field for this. Mockspark sets processing time to **2 to 5 days** on every listing it publishes, which reflects how long print-on-demand production actually takes. If your shop already has a matching profile, Mockspark reuses it rather than creating another one.
+
+### Buyer Personalization
+
+Leave this off to sell a fixed design. Turn it on to let buyers make their own version before they buy. [Let Buyers Personalize Your Listings](/docs/connections/etsy/personalization) covers how that works from both sides.
+
+### Variants
+
+Set the price and availability for each variant. Prices are in the store currency you chose above.
+
+## Publish
+
+Click publish. Mockspark creates the listing on Etsy, uploads your photos, sets up the variants, and activates it.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/publish-success.png | 内容: 发布成功后的状态，含指向 Etsy listing 的链接 */}
+
+If something fails partway through, Mockspark removes the half-built draft it created so you do not end up with orphaned listings cluttering your shop. Fix what the error points at and publish again.
+
+## Updating a Published Product
+
+Change the design, prices, or photos in Mockspark and publish again. Mockspark updates the existing listing instead of creating a second one.
+
+If you deleted the listing on Etsy in the meantime, Mockspark notices and creates a fresh one.
+
+## When Publishing Fails
+
+<AccordionGroup>
+  <Accordion title="Oh dear, you cannot sell this item on Etsy" icon="circle-alert">
+    This is Etsy's message for a missing production partner. It is not about your shop's selling privileges. Add a production partner as described at the top of this page.
+  </Accordion>
+  <Accordion title="Production partner is required" icon="circle-alert">
+    Mockspark caught the same problem before sending it to Etsy. Same fix.
+  </Accordion>
+  <Accordion title="Shipping profile is required" icon="circle-alert">
+    Pick a profile, or choose **Mockspark Shipping (free shipping)** to have one created.
+  </Accordion>
+  <Accordion title="The category dropdown is empty" icon="circle-alert">
+    Etsy's category list failed to load. Reload the page. If it keeps happening, your shop connection may need reauthorizing. Check the [connections page](/docs/connections/etsy/connect) for a **Reconnect required** tag.
+  </Accordion>
+</AccordionGroup>
+
+## Next
+
+<Card title="Etsy Orders and Fulfillment" icon="package" href="/docs/connections/etsy/orders">
+  What happens after a buyer places an order.
+</Card>
+
+---
+
+The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.

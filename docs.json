@@ -18,8 +18,8 @@
   "navigation": {
     "dropdowns": [
       {
-        "dropdown": "Documentation",
-        "icon": "book",
+        "dropdown": "Shopify",
+        "icon": "store",
         "groups": [
           {
             "group": "Getting Started",
@@ -63,6 +63,58 @@
               "docs/billing/usages",
               "docs/billing/purchases"
             ]
+          },
+          {
+            "group": "Account and Team",
+            "pages": [
+              "docs/team/team-management"
+            ]
+          }
+        ]
+      },
+      {
+        "dropdown": "Etsy",
+        "icon": "shopping-bag",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "docs/connections/etsy/introduction",
+              "docs/connections/etsy/overview"
+            ]
+          },
+          {
+            "group": "Selling on Etsy",
+            "pages": [
+              "docs/connections/etsy/connect",
+              "docs/connections/etsy/publish",
+              "docs/connections/etsy/personalization"
+            ]
+          },
+          {
+            "group": "Products and Modeling",
+            "pages": [
+              "docs/products/products",
+              "docs/products/personalizer",
+              "docs/products/tutorials"
+            ]
+          },
+          {
+            "group": "Connection Platform",
+            "pages": [
+              "docs/connections/printify",
+              "docs/connections/printful"
+            ]
+          },
+          {
+            "group": "Orders and Fulfillment",
+            "pages": [
+              "docs/connections/etsy/orders"
+            ]
+          },
+          {
+            "group": "Marketing",
+            "pages": ["docs/marketing/picture-collections"]
           },
           {
             "group": "Account and Team",

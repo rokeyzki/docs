@@ -1,0 +1,86 @@
+---
+title: Let Buyers Personalize Your Listings
+description: "Give Etsy buyers their own designer, and produce exactly what they made"
+icon: "square-dashed-mouse-pointer"
+---
+
+Personalization lets a buyer design their own version of your product before they buy it. They open a designer, place their text or image, submit it, and you produce that exact design.
+
+## Why It Works This Way
+
+Etsy does not let apps put a custom designer inside a listing page. The only field Etsy gives you for buyer input is **Personalization**, and it accepts plain text.
+
+So Mockspark works with what Etsy allows. The Personalization field carries a link to the designer and collects a short ID that points back to the design the buyer made. It takes the buyer one extra copy and paste, and everything else is automatic.
+
+## Turning It On
+
+On the publish form, switch on **Let buyers customize this design**, then publish.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/personalization-toggle.png | 内容: 发布页 Buyer personalization 区块，开关处于打开状态 */}
+
+Mockspark adds a required personalization question to your Etsy listing:
+
+- The question is labelled **Customization ID**
+- The instructions read `Open https://app.mockspark.com/guest/customize?p=etsy&ref=<your listing id> to design, then paste your ID here`
+- The field accepts up to 36 characters, which is exactly the length of one ID
+
+The link is unique to that listing, so the designer always opens the right product.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-listing-personalization-field.png | 内容: Etsy 商品页上买家看到的 Personalization 输入框与提示文字 */}
+
+<Tip>Turning the switch off and republishing removes the personalization question from the listing.</Tip>
+
+## What the Buyer Does
+
+<Steps>
+  <Step title="Opens the link">
+    The buyer copies the address from the personalization instructions and opens it. No account and no login.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/guest-designer.png | 内容: 买家自助定制页 /guest/customize 的设计器界面 */}
+  </Step>
+  <Step title="Designs the product">
+    They pick a variant, add text or upload an image, and see it on the product as they go.
+  </Step>
+  <Step title="Submits and gets an ID">
+    When they are happy, they submit. Mockspark saves the design and shows a 36-character ID with a copy button.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/guest-success-id.png | 内容: 提交成功页，显示定制 ID 与复制按钮 */}
+  </Step>
+  <Step title="Pastes the ID back on Etsy">
+    They return to your listing, paste the ID into the Personalization field, and check out as normal.
+
+    {/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-personalization-filled.png | 内容: Etsy 结算流程中 Personalization 字段已粘贴好定制 ID 的状态 */}
+  </Step>
+</Steps>
+
+When the order reaches Mockspark, it reads the ID, finds the design, and builds the print file from it. You do not need to match anything up by hand.
+
+## When a Buyer Skips the ID
+
+Some buyers will type a message into the field, or paste something that is not an ID, or buy without designing at all. Mockspark cannot produce anything in that case, so the order arrives marked **Unfulfillable** and whatever the buyer typed is saved so you can see it.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/order-unfulfillable.png | 内容: 订单详情页显示 Unfulfillable 状态，以及买家实际填写的内容 */}
+
+You have a way out. Open the order and copy the design link Mockspark generates for it, then send it to the buyer through Etsy messages. The link opens the designer locked to the variant they already paid for. Once they submit, the order becomes producible and moves on as normal.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/order-redesign-link.png | 内容: 订单详情页上「给买家补设计」链接的复制入口 */}
+
+If the buyer never responds, cancel the order in Mockspark and refund them on Etsy. Cancelling in Mockspark only updates the status there, it does not refund anyone.
+
+<Warning>
+Refunds always happen on Etsy. Mockspark never moves money and never contacts your buyers.
+</Warning>
+
+## Good Listing Copy Helps
+
+Buyers move faster when the listing tells them what is coming. A line in your description such as "Click the link in the Personalization box to design your item, then paste the ID it gives you" cuts down on orders that arrive without an ID.
+
+## Next
+
+<Card title="Etsy Orders and Fulfillment" icon="package" href="/docs/connections/etsy/orders">
+  How personalized and standard orders both get produced.
+</Card>
+
+---
+
+The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.

@@ -1,0 +1,97 @@
+---
+title: Etsy Orders and Fulfillment
+description: "How paid Etsy orders reach Mockspark, become print files, and get shipped"
+icon: "package"
+---
+
+Once your listings are live, orders take care of most of themselves. This page covers what arrives, what you do, and the two places Etsy behaves differently from what you might expect.
+
+## Orders Arrive on Their Own
+
+Mockspark checks each connected shop for new paid orders every 15 minutes, so an order usually appears within a quarter of an hour of being paid.
+
+You do not need to import anything or press a sync button. If an order is paid, it is coming.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/order-list.png | 内容: Order Items 列表页，含若干 Etsy 订单，可见 Etsy 平台标识 */}
+
+<Note>
+Only paid orders are picked up. Etsy carts, drafts, and unpaid orders are ignored.
+</Note>
+
+## Order Statuses
+
+An order moves through these on its way out the door.
+
+| Status | What it means |
+| --- | --- |
+| **Generating** | Mockspark is building the print-ready file. This usually takes seconds |
+| **Ready to fulfill** | The file is done. The order is waiting for you to send it to your print provider |
+| **Being fulfilled** | You sent it, and your print provider has it |
+| **Fulfilled** | Shipped, with tracking sent back to Etsy |
+| **Unfulfillable** | Nothing producible came with the order. Almost always a missing or invalid customization ID. See [personalization](/docs/connections/etsy/personalization#when-a-buyer-skips-the-id) |
+| **Canceled** | The order was fully refunded on Etsy, or you cancelled it in Mockspark |
+
+## Sending an Order to Production
+
+Open an order that is **Ready to fulfill** and send it to your print provider. Mockspark passes across the print file, the variant, the buyer's shipping address, and the quantity.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/order-detail-ready.png | 内容: Etsy 订单详情页，状态 Ready to fulfill，可见发往履约平台的操作按钮 */}
+
+This step is yours on purpose. Production costs money, so nothing goes out until you say so.
+
+Your print provider bills you directly using the account you connected. Mockspark does not add a charge on top and does not take a cut of the order.
+
+<Note>
+Your print provider account has to be connected first. See [Printful](/docs/connections/printful) or [Printify](/docs/connections/printify).
+</Note>
+
+## Tracking Goes Back to Etsy
+
+When your print provider ships, Mockspark marks the order as shipped on Etsy and sends the tracking number over. Etsy then notifies the buyer, the same as it would for any other order.
+
+### The One Exception: Orders with More Than One Item
+
+Etsy applies shipping updates to a whole order rather than to individual items. If a buyer bought three things in one order, there is no way for an app to mark only one of them as shipped.
+
+Because of that, Mockspark does not send shipping updates for Etsy orders containing more than one item. It would either notify the buyer too early or mark items as shipped that have not been.
+
+For these orders, **mark the order as shipped in Etsy yourself** once everything has gone out. Mockspark shows a reminder on any order this applies to, so you will not have to remember on your own.
+
+{/* IMAGE-TODO | 路径: /images/connections/etsy/multi-item-notice.png | 内容: 订单详情页上「This Etsy order has more than one item」提示条 */}
+
+Single-item orders, which is most print-on-demand traffic, are fully automatic.
+
+## Refunds and Cancellations
+
+If you fully refund a buyer on Etsy, Mockspark notices on its next check and marks the order **Canceled**.
+
+Two things worth knowing:
+
+**Partial refunds are not tracked.** If you refund part of an order, Mockspark leaves it alone, since the order is still going ahead in some form.
+
+**Cancelling does not recall production.** If you already sent the order to your print provider, cancelling in Mockspark does not stop it. Cancel it in your print provider's dashboard too, and do that quickly, because once production starts you are paying for it.
+
+<Warning>
+Refunding a buyer always happens on Etsy. Marking an order **Canceled** in Mockspark changes the status in Mockspark only. No money moves.
+</Warning>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="An order I can see on Etsy is not in Mockspark yet" icon="clock">
+    Give it 15 minutes. If it still has not arrived, check the [connections page](/docs/connections/etsy/connect) for a **Reconnect required** tag, which stops syncing for that shop until you reauthorize.
+  </Accordion>
+  <Accordion title="The order says Unfulfillable" icon="circle-alert">
+    The buyer did not supply a usable customization ID. Send them the design link from the order page. [Full walkthrough here](/docs/connections/etsy/personalization#when-a-buyer-skips-the-id).
+  </Accordion>
+  <Accordion title="Can I edit the design after the order arrives?" icon="pencil">
+    Yes. Open the order and change the design before sending it to production. Mockspark rebuilds the print file. Once the order is with your print provider, changes have to be handled there.
+  </Accordion>
+  <Accordion title="The buyer's address looks wrong to my print provider" icon="map-pin">
+    Print providers validate addresses and will reject ones that do not add up. Message the buyer on Etsy for a corrected address, then update it before sending the order to production.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+The term 'Etsy' is a trademark of Etsy, Inc. This application uses the Etsy API but is not endorsed or certified by Etsy, Inc.
