@@ -10,23 +10,33 @@ Connecting takes about a minute. You will be sent to Etsy to approve the connect
 
 Log in to [app.mockspark.com](https://app.mockspark.com), open **Connections** in the top navigation, and choose **Etsy**.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/nav-connections-etsy.png | 内容: 顶部导航 Connections 下拉展开，鼠标停在 Etsy 项上 */}
+<Frame>
+  <img src="/images/connections/etsy/nav-connections-etsy.png" alt="The Connections menu open in Mockspark with Etsy under Sales Platforms" />
+</Frame>
 
 Click the **Connect Etsy shop** card.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/empty-state.png | 内容: Etsy Shops 页面在还没连接任何店铺时的样子，只有虚线加号卡片 */}
+<Frame>
+  <img src="/images/connections/etsy/empty-state.png" alt="The Etsy Shops page with no shops connected yet, showing only the Connect Etsy shop card" />
+</Frame>
 
 A short notice appears before you leave Mockspark. Read it and click **Continue to Etsy**.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/confirm-modal.png | 内容: "Confirm Connection to Etsy" 确认弹窗完整截图 */}
+<Frame>
+  <img src="/images/connections/etsy/confirm-modal.png" alt="The Confirm Connection to Etsy dialog with the Continue to Etsy button" />
+</Frame>
 
-Etsy now asks you to allow the connection and lists what the app will be able to do. If you want to know what each of those permissions is used for, [How Mockspark Works with Etsy](/docs/connections/etsy/overview) has a plain-language table. Click **Allow Access**.
+Etsy now asks you to allow the connection and lists what the app will be able to do. If you want to know what each of those permissions is used for, [How Mockspark Works with Etsy](/docs/connections/etsy/overview) explains them one by one. Click **Grant access**.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-oauth-consent.png | 内容: Etsy 官方授权页，展示权限列表和 Allow Access 按钮 */}
+<Frame>
+  <img src="/images/connections/etsy/etsy-oauth-consent.png" alt="Etsy's authorization page listing the permissions Mockspark requests, with the Grant access button" />
+</Frame>
 
 Etsy sends you back to Mockspark and your shop appears as a card.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/connected-card.png | 内容: 连接成功后的店铺卡片，显示 Shop name、Status: Available、Updated at 和 Default 角标 */}
+<Frame>
+  <img src="/images/connections/etsy/connected-card.png" alt="A connected Etsy shop card showing the shop name, a status of Available, and when it was last updated" />
+</Frame>
 
 <Check>That is the whole setup. There is nothing to install in your Etsy shop and no theme or template to edit.</Check>
 
@@ -36,7 +46,9 @@ Run several Etsy shops from one Mockspark account by clicking **Connect Etsy sho
 
 One shop is marked **Default**. When you create a new product, Mockspark assumes you mean the default shop, though you can switch shops on the publish form while the product is still a draft. To change which one is the default, hover over a card and click **Set as default**.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/card-hover-actions.png | 内容: 鼠标悬停在店铺卡片上，露出 View shop / Set as default / Reconnect / Disconnect 四个操作 */}
+<Frame>
+  <img src="/images/connections/etsy/card-hover-actions.png" alt="Hovering a shop card reveals View shop, Set as default, Reconnect, and Disconnect" />
+</Frame>
 
 <Warning>
 Once a product has been published to a shop, you cannot move it to a different shop. Pick the right shop before you publish.
@@ -46,9 +58,7 @@ Once a product has been published to a shop, you cannot move it to a different s
 
 Etsy access tokens expire and Mockspark refreshes them for you in the background. Sometimes that fails, usually because you removed the app from your Etsy account, or you changed your Etsy password.
 
-When that happens the card shows a red **Reconnect required** tag and order syncing for that shop stops.
-
-{/* IMAGE-TODO | 路径: /images/connections/etsy/reconnect-required.png | 内容: 店铺卡片显示红色 "Reconnect required" 标签 */}
+When that happens the card shows a red **Reconnect required** tag in place of the usual green **Available** status, and order syncing for that shop stops.
 
 To fix it, hover over the card and click **Reconnect**, then approve on Etsy again. Nothing is lost. Your products, listings, and past orders stay exactly where they were, and syncing picks up again.
 
@@ -59,10 +69,12 @@ Hover over the card and click **Disconnect**.
 This stops Mockspark from syncing orders for that shop. Listings already on Etsy stay live and keep selling, so if you want them gone, remove them in Etsy.
 
 <Warning>
-Disconnecting in Mockspark does not revoke access on Etsy's side. To cut off access completely, also go to your Etsy account, open **Your Account** then **Apps**, and remove Mockspark there.
+Disconnecting in Mockspark does not revoke access on Etsy's side. To cut off access completely, go to Etsy Shop Manager, open **Apps**, switch to the **Connected apps** tab, and click **Disconnect** next to Mockspark Product Personalizer.
 </Warning>
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-account-apps.png | 内容: Etsy 账号设置里的 Apps 页面，显示已授权的 Mockspark 及移除入口 */}
+<Frame>
+  <img src="/images/connections/etsy/etsy-account-apps.png" alt="The Connected apps tab in Etsy Shop Manager with a Disconnect button next to Mockspark Product Personalizer" />
+</Frame>
 
 ## Next
 

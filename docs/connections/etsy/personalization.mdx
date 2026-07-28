@@ -16,7 +16,9 @@ So Mockspark works with what Etsy allows. The Personalization field carries a li
 
 On the publish form, switch on **Let buyers customize this design**, then publish.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/personalization-toggle.png | 内容: 发布页 Buyer personalization 区块，开关处于打开状态 */}
+<Frame>
+  <img src="/images/connections/etsy/personalization-toggle.png" alt="Step 3 of the product builder with the Let buyers customize this design switch turned on" />
+</Frame>
 
 Mockspark adds a required personalization question to your Etsy listing:
 
@@ -26,7 +28,9 @@ Mockspark adds a required personalization question to your Etsy listing:
 
 The link is unique to that listing, so the designer always opens the right product.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-listing-personalization-field.png | 内容: Etsy 商品页上买家看到的 Personalization 输入框与提示文字 */}
+<Frame>
+  <img src="/images/connections/etsy/etsy-listing-personalization-field.png" alt="An Etsy listing showing the Customization ID field, its instructions, and the 36 character limit" />
+</Frame>
 
 <Tip>Turning the switch off and republishing removes the personalization question from the listing.</Tip>
 
@@ -36,20 +40,26 @@ The link is unique to that listing, so the designer always opens the right produ
   <Step title="Opens the link">
     The buyer copies the address from the personalization instructions and opens it. No account and no login.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/guest-designer.png | 内容: 买家自助定制页 /guest/customize 的设计器界面 */}
+    <Frame>
+      <img src="/images/connections/etsy/guest-designer.png" alt="The buyer designer opened from a listing link, with the variant selector and Submit customization button" />
+    </Frame>
   </Step>
   <Step title="Designs the product">
     They pick a variant, add text or upload an image, and see it on the product as they go.
   </Step>
   <Step title="Submits and gets an ID">
-    When they are happy, they submit. Mockspark saves the design and shows a 36-character ID with a copy button.
+    When they are happy, they click **Submit customization**. Mockspark saves the design and shows a 36-character ID with a copy button.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/guest-success-id.png | 内容: 提交成功页，显示定制 ID 与复制按钮 */}
+    <Frame>
+      <img src="/images/connections/etsy/guest-success-id.png" alt="The confirmation screen showing the customization ID and a Copy button" />
+    </Frame>
   </Step>
   <Step title="Pastes the ID back on Etsy">
-    They return to your listing, paste the ID into the Personalization field, and check out as normal.
+    They return to your listing, open **Add personalization**, paste the ID into the **Customization ID** box, and add to cart as normal. The character counter reads 36 of 36 when the ID is complete.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/etsy-personalization-filled.png | 内容: Etsy 结算流程中 Personalization 字段已粘贴好定制 ID 的状态 */}
+    <Frame>
+      <img src="/images/connections/etsy/etsy-personalization-filled.png" alt="An Etsy listing with a customization ID pasted into the Customization ID field, the counter reading 36 of 36" />
+    </Frame>
   </Step>
 </Steps>
 
@@ -57,15 +67,23 @@ When the order reaches Mockspark, it reads the ID, finds the design, and builds 
 
 ## When a Buyer Skips the ID
 
-Some buyers will type a message into the field, or paste something that is not an ID, or buy without designing at all. Mockspark cannot produce anything in that case, so the order arrives marked **Unfulfillable** and whatever the buyer typed is saved so you can see it.
+Some buyers will type a message into the field, or paste something that is not an ID, or buy without designing at all. Mockspark cannot produce anything in that case, so the order arrives marked **Unfulfillable** in your order list.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/order-unfulfillable.png | 内容: 订单详情页显示 Unfulfillable 状态，以及买家实际填写的内容 */}
+Open it and the page tells you exactly what went wrong and what the buyer actually typed, so you know whether they misread the instructions or skipped them.
 
-You have a way out. Open the order and copy the design link Mockspark generates for it, then send it to the buyer through Etsy messages. The link opens the designer locked to the variant they already paid for. Once they submit, the order becomes producible and moves on as normal.
+<Frame>
+  <img src="/images/connections/etsy/order-unfulfillable.png" alt="An order that cannot be fulfilled, showing the reason and what the buyer typed into the personalization field" />
+</Frame>
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/order-redesign-link.png | 内容: 订单详情页上「给买家补设计」链接的复制入口 */}
+You have a way out. Click **Copy redesign link**, then send that link to the buyer through Etsy messages. It opens the designer locked to the size they already paid for, so they cannot accidentally design for the wrong variant. Once they submit, the order becomes producible and moves on as normal.
 
-If the buyer never responds, cancel the order in Mockspark and refund them on Etsy. Cancelling in Mockspark only updates the status there, it does not refund anyone.
+<Frame>
+  <img src="/images/connections/etsy/order-redesign-link.png" alt="The What you can do next panel on a stalled order, with the Copy redesign link button" />
+</Frame>
+
+Nothing is charged for an order in this state. It sits on hold until the buyer supplies a design that matches what they ordered.
+
+If the buyer never responds, click **Cancel order item** and refund them on Etsy. Cancelling in Mockspark only updates the status there, it does not refund anyone.
 
 <Warning>
 Refunds always happen on Etsy. Mockspark never moves money and never contacts your buyers.

@@ -30,19 +30,20 @@ A few notes on the steps that surprise people.
 
 ## What Mockspark Reads from Your Etsy Shop
 
-When you connect your shop, Etsy shows you a permission screen. Here is what each permission is for, in plain terms.
+When you connect your shop, Etsy shows you a permission screen. The table below lists every line on that screen, in Etsy's own wording and in the order Etsy shows it, so you can read the two side by side. Mockspark asks for nothing beyond these.
 
 | What Etsy asks for | What Mockspark does with it |
 | --- | --- |
-| Read your shop details | Reads your shipping profiles, return policies, production partners, processing times, currency, and the country you ship from, so the publish form can offer you real choices instead of blank fields |
-| Update your shop details | Creates one shipping profile, and only if you ask for it while publishing. Mockspark never edits shipping profiles you made yourself |
-| Read your listings | Checks whether a listing Mockspark published still exists before updating it |
-| Create and update listings | Publishes your products, updates prices, photos, and variants when you republish |
-| Delete listings | Removes a draft listing that Mockspark itself created if publishing fails partway through. Listings you created yourself are never deleted |
-| Read your orders | Brings paid orders into Mockspark so they can be produced |
-| Update your orders | Marks an order as shipped and sends the tracking number back to Etsy after your print provider ships it |
-| Read buyer shipping addresses | Passes the delivery address to your print provider so the parcel can be addressed |
-| Read buyer email addresses | Print providers require an email on the order for shipping notifications |
+| Connect to your account | Identifies which Etsy account approved the connection, so the shop can be linked to your Mockspark account |
+| see billing and shipping addresses | Passes the buyer's delivery address to your print provider so the parcel can be addressed |
+| Read your user profile | Etsy shows this line for the email permission. Any contact details that come with an order are displayed on the order page, so you can reach the buyer yourself if something needs sorting out. Mockspark never emails your buyers and never uses these details for marketing |
+| delete listings | Removes a draft listing that Mockspark itself created if publishing fails partway through. Listings you created yourself are never deleted |
+| see all listings (including expired etc) | Checks whether a listing Mockspark published still exists before updating it |
+| create/edit listings | Publishes your products, and updates prices, photos, and variants when you republish |
+| see private shop info | Reads your shipping profiles, return policies, production partners, processing times, currency, and the country you ship from, so the publish form can offer you real choices instead of blank fields |
+| update shop | Creates one shipping profile, and only if you ask for it while publishing. Mockspark never edits shipping profiles you made yourself |
+| see all checkout/payment data | Brings paid orders into Mockspark so they can be produced. Mockspark reads what was ordered and what the buyer paid. Card and bank details are not part of what Etsy's API returns, so Mockspark never receives them |
+| update receipts | Marks an order as shipped and sends the tracking number back to Etsy after your print provider ships it |
 
 ## What Mockspark Does Not Do
 
@@ -58,7 +59,7 @@ Your artwork, mockups, and finished print files are stored by Mockspark. Etsy on
 
 ## Disconnecting
 
-You can disconnect a shop from Mockspark at any time, which stops order syncing right away. To cut off access completely, also remove the app from your Etsy account under **Your Account** then **Apps**. [Connect Your Etsy Shop](/docs/connections/etsy/connect) covers both steps.
+You can disconnect a shop from Mockspark at any time, which stops order syncing right away. To cut off access completely, also revoke the app in Etsy Shop Manager under **Apps** then **Connected apps**. [Connect Your Etsy Shop](/docs/connections/etsy/connect) covers both steps.
 
 ## Next
 

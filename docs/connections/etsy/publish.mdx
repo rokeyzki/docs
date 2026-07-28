@@ -16,7 +16,9 @@ Etsy's API has no way to add a production partner, so this is something you do o
   <Step title="Open the production partner settings">
     In Etsy Shop Manager, go to **Settings** then **Partners you work with**, and click to add a partner.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-settings-nav.png | 内容: Etsy Shop Manager 左侧 Settings 展开，Partners you work with 高亮 */}
+    <Frame>
+      <img src="/images/connections/etsy/pp-settings-nav.png" alt="Etsy Shop Manager with Settings expanded, Partners you work with selected, and the Add production partner button" />
+    </Frame>
   </Step>
   <Step title="Name the company that prints your items">
     Enter the company that actually prints and ships your products. If you fulfill through Printful, that is Printful. If you fulfill through Printify, that is Printify. Set **Location** to where that company produces your items.
@@ -25,7 +27,9 @@ Etsy's API has no way to add a production partner, so this is something you do o
       Name the printer, not your design software. Etsy defines a production partner as the outside company that physically makes the item. Naming a tool instead of the printer counts as an inaccurate disclosure, and the risk falls on your shop.
     </Warning>
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-add-form-top.png | 内容: Etsy "Add a production partner" 弹窗上半部分，含 Production partner 名称、Show this to buyers 开关、Location */}
+    <Frame>
+      <img src="/images/connections/etsy/pp-add-form-top.png" alt="The Add a production partner dialog on Etsy with the partner name, Show this to buyers toggle, and Location filled in" />
+    </Frame>
   </Step>
   <Step title="Describe what they do for you">
     This description is shown to buyers, so keep it clear and honest. Say that they print your designs and ship the orders. Something like:
@@ -34,12 +38,26 @@ Etsy's API has no way to add a production partner, so this is something you do o
 
     Avoid vague lines like "they help with my shop". Etsy wants buyers to understand the arrangement.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-what-they-do.png | 内容: Etsy 添加生产合作方弹窗里 "What they do for you" 那一段，含描述输入框 */}
+    <Frame>
+      <img src="/images/connections/etsy/pp-what-they-do.png" alt="The What they do for you field on Etsy filled in with a description of the printing arrangement" />
+    </Frame>
   </Step>
-  <Step title="Answer the two remaining questions">
-    Under **More about your partner**, most print-on-demand sellers pick *I don't have the technical ability or equipment to make it entirely by myself* and *I design everything myself*. These answers go to Etsy only and are not shown to buyers. Save when you are done.
+  <Step title="Answer the three questions about the partnership">
+    **More about your partner** has three dropdowns. Etsy keeps these answers internal, so buyers never see them.
 
-    {/* IMAGE-TODO | 路径: /images/connections/etsy/pp-more-about.png | 内容: "More about your partner" 两个下拉框已选好的状态 */}
+    **Why do you work with this partner?** Most print-on-demand sellers pick *I don't have the technical ability or equipment to make it entirely by myself*, which is the honest answer if you do not own a printer.
+
+    **What is your role in the design process?** Pick *I design everything myself* if the artwork is yours.
+
+    **What is your partner's role in the production process?** Pick *They do everything for me*. Printful and Printify print your design, pack the order, and ship it straight to your buyer. The item never passes through your hands, so the other options do not apply: you are not assembling components, altering a finished product, or adding your own packaging.
+
+    That answer does not take credit away from you. The design question above already records that the artwork is yours. Together the two answers say what is actually true, which is that you design everything and your partner produces everything.
+
+    Save when you are done.
+
+    <Frame>
+      <img src="/images/connections/etsy/pp-more-about.png" alt="The three More about your partner dropdowns on Etsy, filled in, with the Save partner button below" />
+    </Frame>
   </Step>
 </Steps>
 
@@ -47,9 +65,15 @@ Etsy's API has no way to add a production partner, so this is something you do o
 
 ## Fill In the Etsy Settings
 
-Back in Mockspark, open your product and go to the publish step.
+Back in Mockspark, open your product. Building a product runs in three steps, shown along the bottom of the page.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/publish-form-full.png | 内容: 发布页 Etsy 分支完整截图，从 Store 一直到 Buyer personalization */}
+<Frame>
+  <img src="/images/connections/etsy/product-builder-steps.png" alt="The product builder with its three step progress bar along the bottom of the page" />
+</Frame>
+
+Steps 1 and 2, the product details and the mockups, work the same whichever platform you sell on. [Products](/docs/products/products) walks through both.
+
+Everything below is **Step 3, Publish to store**, which is where the Etsy settings live.
 
 ### Shop and Platforms
 
@@ -77,17 +101,15 @@ Mockspark preselects a category based on the product type, so most of the time y
 
 Etsy handles shipping costs through shipping profiles that live in your shop.
 
-If you already have profiles, pick the one you want and Mockspark will attach it to the listing.
+If you already have profiles, the dropdown lists them. Pick the one you want and Mockspark attaches it to the listing.
 
-If your shop has none yet, Mockspark offers to create one for you, shown as **Mockspark Shipping (free shipping)**.
+If your shop has none yet, the dropdown holds a single extra option instead: **Mockspark Shipping (free shipping)**. Choosing it tells Mockspark to create that profile in your Etsy shop as part of publishing. It is a real profile, so it shows up in your Etsy shipping settings afterwards and you can edit it there like any other.
 
 <Warning>
 Free shipping means the buyer pays nothing for delivery. It does not mean delivery is free. Your print provider still charges you for shipping, and that cost comes out of your margin. Price your items with that in mind, or set up your own shipping profile in Etsy instead.
 </Warning>
 
-The profile is created with your shop's own ship-from country, taken from your Etsy settings. For countries that use postal codes, Etsy requires one and does not share it through the API, so Mockspark asks you for it once.
-
-{/* IMAGE-TODO | 路径: /images/connections/etsy/shipping-profile-sentinel.png | 内容: 店铺没有运费档案时，下拉里出现 "Mockspark Shipping (free shipping)" 选项，下方是解释文案与邮编输入框 */}
+The profile is created with your shop's own ship-from country, taken from your Etsy settings. If that country uses postal codes, Etsy requires one and does not share it through the API, so a postal code box appears under the dropdown and Mockspark asks you to fill it in once.
 
 ### Etsy Return Policy
 
@@ -109,9 +131,13 @@ Set the price and availability for each variant. Prices are in the store currenc
 
 ## Publish
 
-Click publish. Mockspark creates the listing on Etsy, uploads your photos, sets up the variants, and activates it.
+Click **Done & Publish**. Mockspark creates the listing on Etsy, uploads your photos, sets up the variants, and activates it.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/publish-success.png | 内容: 发布成功后的状态，含指向 Etsy listing 的链接 */}
+When it finishes you get the listing URL and a **Check on Etsy** link that opens the live listing, so you can see what buyers see.
+
+<Frame>
+  <img src="/images/connections/etsy/publish-success.png" alt="The publish confirmation showing the shop name, product title, listing URL, and a Check on Etsy link" />
+</Frame>
 
 If something fails partway through, Mockspark removes the half-built draft it created so you do not end up with orphaned listings cluttering your shop. Fix what the error points at and publish again.
 

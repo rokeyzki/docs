@@ -12,7 +12,9 @@ Mockspark checks each connected shop for new paid orders every 15 minutes, so an
 
 You do not need to import anything or press a sync button. If an order is paid, it is coming.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/order-list.png | 内容: Order Items 列表页，含若干 Etsy 订单，可见 Etsy 平台标识 */}
+<Frame>
+  <img src="/images/connections/etsy/order-list.png" alt="The Order Items list with Etsy orders, showing each order's store, fulfillment platform, and status" />
+</Frame>
 
 <Note>
 Only paid orders are picked up. Etsy carts, drafts, and unpaid orders are ignored.
@@ -33,9 +35,11 @@ An order moves through these on its way out the door.
 
 ## Sending an Order to Production
 
-Open an order that is **Ready to fulfill** and send it to your print provider. Mockspark passes across the print file, the variant, the buyer's shipping address, and the quantity.
+Open an order that is **Ready to fulfill** and click **Send to Fulfill**. Mockspark passes across the print file, the variant, the buyer's shipping address, and the quantity.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/order-detail-ready.png | 内容: Etsy 订单详情页，状态 Ready to fulfill，可见发往履约平台的操作按钮 */}
+<Frame>
+  <img src="/images/connections/etsy/order-detail-ready.png" alt="An Etsy order detail page in the Ready to fulfill state, with the Send to Fulfill button" />
+</Frame>
 
 This step is yours on purpose. Production costs money, so nothing goes out until you say so.
 
@@ -57,7 +61,9 @@ Because of that, Mockspark does not send shipping updates for Etsy orders contai
 
 For these orders, **mark the order as shipped in Etsy yourself** once everything has gone out. Mockspark shows a reminder on any order this applies to, so you will not have to remember on your own.
 
-{/* IMAGE-TODO | 路径: /images/connections/etsy/multi-item-notice.png | 内容: 订单详情页上「This Etsy order has more than one item」提示条 */}
+<Frame>
+  <img src="/images/connections/etsy/multi-item-notice.png" alt="The notice shown on an Etsy order containing more than one item" />
+</Frame>
 
 Single-item orders, which is most print-on-demand traffic, are fully automatic.
 
