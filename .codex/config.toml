@@ -1,0 +1,5 @@
+approval_policy = "on-request"
+approvals_reviewer = "user"
+sandbox_mode = "workspace-write"
+
+# 机器相关的绝对 writable_roots、项目 trust、模型与 OAuth 只放在用户级配置。

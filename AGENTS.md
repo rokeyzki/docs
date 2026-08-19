@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+本文件为 Codex 在本仓库工作时提供项目指引。
 
 ## 回复语言（务必遵守）
 
@@ -8,13 +8,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 注意区分两件事：**跟用户沟通用中文，写进文档站的正文一律用英文**（站点面向海外商家，现有文档全部是英文）。
 
+## Codex 工作边界（务必遵守）
+
+- 可以读取、修改和暂存项目文件，但不要执行 `git commit`、`git push` 或任何发布操作，除非用户在当前轮次明确授权。此仓库推送到默认分支会自动发布到生产。
+- `git restore`、`checkout`、`switch`、`merge`、`rebase`、`stash`、`reset`、`clean`、删除重要文件、安装或卸载依赖，也必须先得到当前轮次的明确授权。
+- 不清理、轮换、验证、迁移或重组现有凭据和生产配置；不要把凭据写进 `AGENTS.md` 或 `.codex/`。
+- 不导入或依赖 Claude 本地状态；仓库文件是项目知识来源。
+
 ## 这个仓库是什么
 
 Mockspark 的**帮助中心**，线上地址 `help.mockspark.com`。用 Mintlify 搭建，内容是一堆 `.mdx` 文件。
 
 它不是内部文档，是公开站点。Dashboard 前端（`../mockspark-dashboard`）的页脚、以及编辑器各面板的「文档」链接都指向这里，通过 `NEXT_PUBLIC_DOCS_HOST` 引用。改动会直接被商家和平台审核人员看到。
 
-Mockspark 整体是一个 POD（print-on-demand）/ Mockup 生成 + 多销售平台电商 SaaS，销售平台支持 Shopify 和 Etsy，下游接 Printful / Printify 及私有履约。完整的全栈结构见 `../mockspark-dashboard/CLAUDE.md`。
+Mockspark 整体是一个 POD（print-on-demand）/ Mockup 生成 + 多销售平台电商 SaaS，销售平台支持 Shopify 和 Etsy，下游接 Printful / Printify 及私有履约。完整的全栈结构见 `../mockspark-dashboard/AGENTS.md`。
 
 ## 写给谁看（最重要的一节）
 
