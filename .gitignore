@@ -1,0 +1,7 @@
+.DS_Store
+
+# Mintlify 本地预览产物
+.mintlify/
+
+# Claude Code：本机私有设置（绝对路径、additionalDirectories 等只放这里，不入 git）
+.claude/settings.local.json

@@ -1,6 +1,12 @@
-# AGENTS.md
+# CLAUDE.md
 
-本文件为 Codex 在本仓库工作时提供项目指引。
+本文件为 Claude Code 在本仓库工作时提供项目指引，每个 session 会全量进入上下文。
+
+> **常规入口是 `../mockspark-dashboard`。** Claude Code 的项目级配置按**启动目录**解析：
+> 从 dashboard 启动时，本仓库的 `.claude/settings.json` **不会**被加载，权限策略与 Supabase MCP 都由
+> dashboard 的 `.claude/settings.json` 和 `.mcp.json` 提供（MCP 全工作区只定义那一份，避免多处漂移）。
+> 本仓库的 `.claude/settings.json` 只在直接 `cd` 进来开会话时生效，作为兜底策略；那种情况下没有 Supabase MCP。
+> 多仓配置分工见 `../mockspark-dashboard/docs/claude-multi-repo-setup.md`。
 
 ## 回复语言（务必遵守）
 
@@ -8,12 +14,12 @@
 
 注意区分两件事：**跟用户沟通用中文，写进文档站的正文一律用英文**（站点面向海外商家，现有文档全部是英文）。
 
-## Codex 工作边界（务必遵守）
+## 工作边界（务必遵守）
 
 - 可以读取、修改和暂存项目文件，但不要执行 `git commit`、`git push` 或任何发布操作，除非用户在当前轮次明确授权。此仓库推送到默认分支会自动发布到生产。
 - `git restore`、`checkout`、`switch`、`merge`、`rebase`、`stash`、`reset`、`clean`、删除重要文件、安装或卸载依赖，也必须先得到当前轮次的明确授权。
-- 不清理、轮换、验证、迁移或重组现有凭据和生产配置；不要把凭据写进 `AGENTS.md` 或 `.codex/`。
-- 不导入或依赖 Claude 本地状态；仓库文件是项目知识来源。
+- 不清理、轮换、验证、迁移或重组现有凭据和生产配置；不要把凭据写进 `CLAUDE.md` 或 `.claude/`。
+- 仓库文件是项目知识的唯一协作来源。本机会话记忆（`~/.claude/projects/*/memory/`）只是个人便签，任何需要别人或下一个 session 知道的结论，必须落到仓库里的 `CLAUDE.md` 或文档中。
 
 ## 这个仓库是什么
 
@@ -21,7 +27,7 @@ Mockspark 的**帮助中心**，线上地址 `help.mockspark.com`。用 Mintlify
 
 它不是内部文档，是公开站点。Dashboard 前端（`../mockspark-dashboard`）的页脚、以及编辑器各面板的「文档」链接都指向这里，通过 `NEXT_PUBLIC_DOCS_HOST` 引用。改动会直接被商家和平台审核人员看到。
 
-Mockspark 整体是一个 POD（print-on-demand）/ Mockup 生成 + 多销售平台电商 SaaS，销售平台支持 Shopify 和 Etsy，下游接 Printful / Printify 及私有履约。完整的全栈结构见 `../mockspark-dashboard/AGENTS.md`。
+Mockspark 整体是一个 POD（print-on-demand）/ Mockup 生成 + 多销售平台电商 SaaS，销售平台支持 Shopify 和 Etsy，下游接 Printful / Printify 及私有履约。完整的全栈结构见 `../mockspark-dashboard/CLAUDE.md`。
 
 ## 写给谁看（最重要的一节）
 
@@ -124,7 +130,7 @@ MDX 注释不会渲染到页面上，所以即使先合并也不会露馅。
 - `colors`: 主色 `#16A34A`（绿）
 - `appearance`: `{ "default": "dark", "strict": true }`，即**只有深色模式**，写文档时不用考虑浅色适配
 - `icons.library`: `lucide`，frontmatter 里的 `icon` 只能用 [Lucide](https://lucide.dev/icons/) 的图标名
-- `navigation`: 目前只有一个 dropdown（`Documentation`），下分若干 group
+- `navigation`: 按销售平台拆成 **Shopify** 和 **Etsy** 两个 dropdown，各自下分若干 group。共用页（`products/*`、`connections/printify`、`connections/printful`、`marketing/picture-collections`、`team/team-management`）在两个 dropdown 里各登记一次
 - `navbar` / `footer`: 顶部 Support 邮箱与 Dashboard 按钮、底部官网与 YouTube 链接
 
 ### ⚠️ 新增页面必须登记到 navigation
@@ -139,6 +145,22 @@ Mintlify **不会**自动收录 `docs/` 下的文件。新建 `.mdx` 之后，�
 - `docs/get-started/todo.mdx`、`docs/get-started/installation-guide.bak.mdx`（这两个像是草稿和备份）
 
 另外 `api-reference/`、根目录的 `quickstart.mdx` 和 `development.mdx`、以及 `snippets/` 里的示例，都是 Mintlify starter kit 的模板残留，没有登记也不属于我们的内容。**不要照着它们的写法写正式文档。**
+
+同一个坑还有一种更隐蔽的形式：**文件登记了，但只登记进了一个 dropdown**。**新增或调整共用页时，记得两个 dropdown 都要过一遍。**
+
+### ⚠️ Etsy 商家目前没有计费文档（未解决）
+
+2026-08-23 核对时发现 Etsy dropdown 缺整个 Payment and Billing 组和 `order-items/troubleshooting`。平台中立的两篇（`order-items/troubleshooting`、`billing/usages`）已补登记，但**另外三篇不能直接复用**：
+
+| 文件 | 问题 |
+| --- | --- |
+| `billing/subscription-plans.mdx` | 通篇写 Shopify Billing：Shopify 收费确认页、「卸载 App 自动取消订阅」、开发店免费试用 |
+| `billing/credit.mdx` | 「All credit purchases are still processed through Shopify Billing」 |
+| `billing/purchases.mdx` | 让商家去 **Shopify Admin → Settings → Billing** 查账单 |
+
+**Etsy 宇宙的计费走 Stripe，不走 Shopify Billing**（Checkout、Customer Portal 取消、invoice 续费，逐条差异见 `../mockspark-dashboard/docs/billing-universes-reference.md`）。把这三篇挂到 Etsy 下会给 Etsy 商家错误指引，比没有更糟。
+
+正确做法是**另写 Stripe 版的三篇**，或者把现有三篇改写成双平台分段。另外注意：Stripe 侧当时仍是沙箱模式、注册入口未开放，写之前先确认线上已切正式，否则会违反本文「别写做不到的事」那条。
 
 ### 目录结构
 

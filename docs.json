@@ -53,7 +53,9 @@
           },
           {
             "group": "Marketing",
-            "pages": ["docs/marketing/picture-collections"]
+            "pages": [
+              "docs/marketing/picture-collections"
+            ]
           },
           {
             "group": "Payment and Billing",
@@ -109,12 +111,21 @@
           {
             "group": "Orders and Fulfillment",
             "pages": [
-              "docs/connections/etsy/orders"
+              "docs/connections/etsy/orders",
+              "docs/order-items/troubleshooting"
             ]
           },
           {
             "group": "Marketing",
-            "pages": ["docs/marketing/picture-collections"]
+            "pages": [
+              "docs/marketing/picture-collections"
+            ]
+          },
+          {
+            "group": "Payment and Billing",
+            "pages": [
+              "docs/billing/usages"
+            ]
           },
           {
             "group": "Account and Team",

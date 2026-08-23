@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git ls-files:*)",
+      "Bash(git grep:*)",
+      "Bash(git add:*)",
+
+      "Bash(rg:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(sed:*)",
+      "Bash(awk:*)",
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Bash(pwd:*)",
+
+      "Bash(mint validate:*)",
+      "Bash(mint broken-links:*)",
+      "Bash(mint --version:*)",
+
+      "WebFetch(domain:mintlify.com)",
+      "WebFetch(domain:help.mockspark.com)"
+    ],
+
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git restore:*)",
+      "Bash(git checkout:*)",
+      "Bash(git switch:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git stash:*)",
+      "Bash(git reset:*)",
+      "Bash(git clean:*)",
+      "Bash(git branch:*)",
+      "Bash(git worktree:*)",
+      "Bash(git tag:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+
+      "Bash(npm install:*)",
+      "Bash(npm i:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm remove:*)",
+      "Bash(npm update:*)",
+      "Bash(npx:*)",
+      "Bash(mint update:*)"
+    ]
+  }
+}
